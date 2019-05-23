@@ -1,0 +1,11 @@
+export * from './authentication.service';
+import { AuthenticationService } from './authentication.service';
+export * from './sampleData.service';
+import { SampleDataService } from './sampleData.service';
+export * from './systemFunction.service';
+import { SystemFunctionService } from './systemFunction.service';
+export * from './user.service';
+import { UserService } from './user.service';
+import { CourseService } from './course.service';
+export * from './course.service';
+export const APIS = [AuthenticationService, SampleDataService, SystemFunctionService, UserService, CourseService];

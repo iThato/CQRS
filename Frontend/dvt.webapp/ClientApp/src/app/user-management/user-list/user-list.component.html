@@ -1,0 +1,83 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Registered Users</h4>
+                        <p class="card-category"> DVT Template Users</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <mat-table class="table" [dataSource]="usersdatesource" matSort>
+
+                                <ng-container matColumnDef="firstName">
+                                    <mat-header-cell *matHeaderCellDef mat-sort-header>First Name</mat-header-cell>
+                                    <mat-cell *matCellDef="let element">{{element.firstName}}</mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="lastName">
+                                    <mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</mat-header-cell>
+                                    <mat-cell *matCellDef="let element">{{element.lastName}}</mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="email">
+                                    <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+                                    <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="contactNumber">
+                                    <mat-header-cell *matHeaderCellDef mat-sort-header>Contact Number</mat-header-cell>
+                                    <mat-cell *matCellDef="let element">{{element.contactNumber}}</mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="username">
+                                        <mat-header-cell *matHeaderCellDef mat-sort-header>Username</mat-header-cell>
+                                        <mat-cell *matCellDef="let element">{{element.username}}</mat-cell>
+                                    </ng-container>
+
+                                <ng-container matColumnDef="systemProfile">
+                                    <mat-header-cell *matHeaderCellDef mat-sort-header>System Profile</mat-header-cell>
+                                    <mat-cell *matCellDef="let element">{{element.systemProfile}}</mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="knownAs">
+                                    <mat-header-cell *matHeaderCellDef mat-sort-header>Known As</mat-header-cell>
+                                    <mat-cell *matCellDef="let element">{{element.knownAs}}</mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="actions">
+                                    <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+                                    <mat-cell *matCellDef="let row">
+
+                                        <button mat-raised-button type="button" matTooltip="Edit Task"
+                                            [matTooltipPosition]="'above'"
+                                            class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button mat-raised-button type="button" matTooltip="Remove"
+                                            [matTooltipPosition]="'above'" (click)="disableUser(row)"
+                                            class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">close</i>
+                                        </button>
+
+                                    </mat-cell>
+                                </ng-container>
+
+                                <mat-header-row *matHeaderRowDef="displayColumns"></mat-header-row>
+                                <mat-row *matRowDef="let row; columns:displayColumns;"></mat-row>
+                               
+                            </mat-table>
+                           
+                            <div class="clearfix"></div>
+                            <mat-paginator [pageSizeOptions]="[5,10,20,50,100]" [pageSize]="5" showFirstLastButtons>
+                                  
+                            </mat-paginator>
+                        </div>
+                        <button style="float: left !important;" (click)="onCreateOrEdit()" mat-raised-button type="submit" class="btn btn-danger pull-right"> <mat-icon>add</mat-icon>Add User</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

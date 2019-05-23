@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[JobRequest]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+    [Body] NVARCHAR(MAX) NULL, 
+    [Type] NVARCHAR(50) NOT NULL, 
+    [Cron] NVARCHAR(100) NULL, 
+    [Deleted] BIT NULL
+)

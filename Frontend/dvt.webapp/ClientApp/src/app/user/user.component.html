@@ -1,0 +1,11 @@
+<div class="container">
+  <mat-toolbar>
+    <span class="fill-remaining-space"></span>
+    <span>User Management</span>
+    <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+  <button class="button-create" mat-raised-button (click)="onCreate()">
+    <mat-icon>add</mat-icon>Add User
+  </button>
+  <app-user-list [users]=users></app-user-list>
+</div>

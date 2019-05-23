@@ -1,0 +1,52 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Registered Courses</h4>
+                      <p class="card-category"> DVT Template Courses</p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <mat-table class="table" [dataSource]="coursesdatesource" matSort>
+
+
+                              <ng-container matColumnDef="Code">
+                                  <mat-header-cell *matHeaderCellDef mat-sort-header>Code</mat-header-cell>
+                                  <mat-cell *matCellDef="let element">{{element.code}}</mat-cell>
+                              </ng-container>
+
+                              <ng-container matColumnDef="Name">
+                                  <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+                                  <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+                              </ng-container>
+
+                              <ng-container matColumnDef="Description">
+                                  <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
+                                  <mat-cell *matCellDef="let element">{{element.description}}</mat-cell>
+                              </ng-container>
+
+                              <ng-container matColumnDef="actions">
+                                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                                  <mat-cell *matCellDef="let row">
+
+                                  </mat-cell>
+                              </ng-container>
+
+                              <mat-header-row *matHeaderRowDef="displayColumns"></mat-header-row>
+                              <mat-row *matRowDef="let row; columns:displayColumns;"></mat-row>
+                             
+                          </mat-table>
+                         
+                          <div class="clearfix"></div>
+                          <mat-paginator [pageSizeOptions]="[5,10,20,50,100]" [pageSize]="5" showFirstLastButtons>
+                                
+                          </mat-paginator>
+                      </div>
+                  </div> 
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

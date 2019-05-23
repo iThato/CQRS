@@ -1,0 +1,13 @@
+
+  .mat-row:nth-child(even){
+    background-color:#d9d9d9;
+    }
+
+.mat-row:nth-child(odd){
+    background-color:#fff;
+    }
+     .mat-raised-button {
+      margin-right: 5px;
+      padding: 0px 12px;
+    }
+  

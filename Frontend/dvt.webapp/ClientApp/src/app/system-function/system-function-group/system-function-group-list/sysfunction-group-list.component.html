@@ -1,0 +1,16 @@
+<div (click)="addNewGroup()">
+    <mat-toolbar class="addButton">
+        <span>Add New System Function Group</span>
+    </mat-toolbar>
+</div>
+<div *ngIf="!groupAdd && !noGroups" class="container">
+    <div *ngFor="let group of groups">
+        <app-sysgroupitem [group]="group"></app-sysgroupitem>
+    </div>
+</div>
+<div *ngIf="groupAdd">
+    <app-sysgroupadd></app-sysgroupadd>
+</div>
+<div *ngIf="noGroups">
+    <label>No Groups Retrieved</label>
+</div>

@@ -1,0 +1,47 @@
+<div class="container">
+    <mat-toolbar>
+        <span class="fill-remaining-space"></span>
+        <span>System Function Management</span>
+        <span class="fill-remaining-space"></span>
+    </mat-toolbar>
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+</div>
+
+<ng-template #cardsTemplate>
+    <div class="container">
+        <mat-card class="tile">
+            <div (click)="viewProfiles()">
+                <mat-card-header>
+                    System Function Profiles
+                </mat-card-header>
+            </div>
+        </mat-card>
+        <mat-card class="tile">
+            <div (click)="viewFunctions()">
+                <mat-card-header>
+                    System Functions
+                </mat-card-header>
+            </div>
+        </mat-card>
+
+        <mat-card class="tile">
+            <div (click)="viewGroups()">
+                <mat-card-header>
+                    System Function Groups
+                </mat-card-header>
+            </div>
+        </mat-card>
+    </div>
+</ng-template>
+
+<ng-template #sysProfilesTemplate>
+    Profiles
+</ng-template>
+
+<ng-template #sysFunctionsTemplate>
+    Functions
+</ng-template>
+
+<ng-template #sysGroupsTemplate>
+    <app-sysgrouplist></app-sysgrouplist>
+</ng-template>

@@ -1,0 +1,75 @@
+<div class="search-div">
+    <mat-form-field class="seacrh-form-field">
+      <input matInput type="text" placeholder="Search" [(ngModel)]="searchKey" floatLabel="never" (keyup)="applyFilter()">
+      <button mat-button *ngIf="searchKey" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchClear()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  
+  <div class="mat-elevation-z8">
+    <mat-table [dataSource]="usersdatesource" matSort>
+      <ng-container matColumnDef="firstName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>First Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.firstName}}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="lastName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.lastName}}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="contactNumber">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Contact Number</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.contactNumber}}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="systemProfile">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>System Profile</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.systemProfile}}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="knownAs">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Known As</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.knownAs}}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="userStatus">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>User Status</mat-header-cell>
+        
+        <mat-cell *matCellDef="let element">{{element.userStatus}}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let row">
+  
+          <button mat-raised-button class="button-updel" (click)="onEdit(row)" color="primary">
+            <!-- <mat-icon>edit</mat-icon> -->
+            Edit
+          </button>
+  
+  
+          <button mat-raised-button class="button-updel" (click)="diableUser(row)" color="warn">
+            <!-- <mat-icon>block</mat-icon> -->
+            Disable
+          </button>
+  
+        </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="loading">
+        <mat-footer-cell *matFooterCellDef colspan="6">Loading...</mat-footer-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns:displayColumns;"></mat-row>
+      <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{hide: usersdatesource!=null}"></mat-footer-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5,10,20,50,100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+  </div>

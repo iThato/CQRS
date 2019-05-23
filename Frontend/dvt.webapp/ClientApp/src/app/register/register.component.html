@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Register User</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/css/util.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="limiter">
+    <div class="container-register100">
+      <div class="wrap-register100 p-t-50 p-b-90">
+        <form [formGroup]="registerForm" (ngSubmit)="register()" class="register100-form validate-form flex-sb flex-w">
+          <span class="register100-form-title p-b-51">
+            Register User
+          </span>
+
+
+          <div class="wrap-input100 validate-input m-b-16">
+            <input class="input100" formControlName="username" matInput placeholder="Username">
+            <span class="focus-input100"></span>
+          </div>
+
+
+          <div class="wrap-input100 validate-input m-b-16">
+            <input class="input100" type="password" formControlName="password" matInput placeholder="Password">
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="container-login100-form-btn m-t-17">
+            <button type="submit" class="login100-form-btn" (click)="register()">
+              Register
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
