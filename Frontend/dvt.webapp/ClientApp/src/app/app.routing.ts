@@ -26,7 +26,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: './admin/main-layout/main-layout.module#MainLayoutModule'
+        loadChildren: () => import('./admin/main-layout/main-layout.module').then(m => m.MainLayoutModule)
 
       }]
   }

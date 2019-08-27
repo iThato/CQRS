@@ -87,10 +87,10 @@ namespace Dvt.Features.Core.Tests.Unit.UserManagement
             return new UserUpdateRequest
             {
                 //Id = 78,
-                //Email = "newupdatedemail@jhb.dvt.za",
-                //FirstName = "Updated Name",
-                //LastName = "Updated LastName",
-                //ContactNumber = "0724568746",
+                Email = "newupdatedemail@jhb.dvt.za",
+                FirstName = "Updated Name",
+                LastName = "Updated LastName",
+                ContactNumber = "0724568746",
                 //CompanyId = 25,
                 //IdNumber = "9202299696180"
             };
