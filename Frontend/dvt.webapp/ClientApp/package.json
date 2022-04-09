@@ -41,7 +41,7 @@
     "enhanced-resolve": "^4.1.0",
     "jquery": "^3.3.1",
     "loader": "^2.1.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ng-chartist": "^4.1.0",
     "ngx-spinner": "^7.0.0",
     "perfect-scrollbar": "^1.4.0",
